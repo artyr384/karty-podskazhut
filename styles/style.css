@@ -198,10 +198,14 @@ figure {
 
 .how-works {
   color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #312a4e;
 }
 
 .theme_dark .how-works {
   color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #b3b3b3;
 }
 
 .how-works:hover {
@@ -213,11 +217,11 @@ figure {
 }
 
 .how-works:focus-visible {
-  outline: var(--text-color);
+  outline: var(--text-color, #312a4e);
 }
 
 .theme_dark .how-works:focus-visible {
-  outline: var(--text-color);
+  outline: var(--text-color, #b3b3b3);
 }
 
 .content__card {
@@ -256,7 +260,7 @@ figure {
   z-index: -1;
 }
 
-.theme_dark .colored-rext::after {
+.theme_dark .colored-text::after {
   content: "";
   position: absolute;
   width: calc(100% + 8px);
