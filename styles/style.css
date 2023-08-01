@@ -7,6 +7,9 @@
 .page {
   min-inline-size: 360px;
   margin: 0;
+  background-color: var(--bg-color, #f3efec);
+  color: var(--text-color, #312a4e);
+  font-family: var(--main-font, Raleway), sans-serif;
 }
 
 p,
@@ -30,12 +33,6 @@ figure {
   --accent-font: 'STIX Two Text';
 }
 
-.page {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--main-font);
-}
-
 .theme_dark {
   --bg-color: #171717;
   --text-color: #d3d3d3;
@@ -43,7 +40,7 @@ figure {
 }
 
 .heading {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, "STIX Two Text"), sans-serif;
   font-weight: 600;
   font-size: normal;
   line-height: 90%;
@@ -62,7 +59,6 @@ figure {
 .header__title {
   font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
   margin-bottom: 40px;
-  font-size: 120px;
 }
 
 .header__menu {
@@ -71,8 +67,8 @@ figure {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-top: 1px solid var(--text-color);
-  border-bottom: 1px solid var(--text-color);
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
 }
 
 .header__theme-toggler {
@@ -87,8 +83,7 @@ figure {
   position: relative;
   border-bottom: 1px solid transparent;
   font-size: 18px;
-  font-family: inherit, sans-serif;
-  background-color: transparent;
+  font-family: inherit;
   color: currentColor;
   border: none;
   cursor: pointer;
@@ -130,7 +125,7 @@ figure {
   left: 0;
   bottom: 20%; 
   height: 0.3em;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffab6b);
   z-index: -1;
 }
 
@@ -139,11 +134,11 @@ figure {
 }
 
 .header__theme-button:focus-visible {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid var(--text-color, #312a4e);
 }
 
 .theme_dark .header__theme-button:focus-visible {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid var(--text-color, #b3b3b3);
 }
 
 .content__title {
@@ -161,13 +156,12 @@ figure {
 }
 
 .content__text-block_type_first-lettered .content__paragraph:first-child:first-letter {
-  border: 1px solid currentColor;
   display: inline-block;
   font-size: 30px;
   font-weight: 700;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffab6b);
   padding: 0 4px;
-  margin-right: 1px;
+  margin-right: 4px;
 }
 
 .theme_dark .content__text-block_type_first-lettered .content__paragraph:first-child:first-letter {
@@ -188,7 +182,7 @@ figure {
 
 .content__picture-caption {
   text-align: center;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--text-color, #312a4e);
   padding: 20px 0;
   font-size: 18px;
 }
@@ -254,18 +248,18 @@ figure {
 .colored-text::after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: calc(100% + 8px);
   left: 4px;
   bottom: 0.1em;
   height: 0.3em;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #ffab6b);
   z-index: -1;
 }
 
 .theme_dark .colored-rext::after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: calc(100% + 8px);
   bottom: 0.1em;
   height: 0.3em;
   background-image: url(../images/pattern.svg);
@@ -295,6 +289,8 @@ figure {
   background-repeat: no-repeat;
   background-size: cover;
   margin-left: -25px;
+  top: 50%;
+  margin-top: -7.5px;
 }
 
 .theme_dark .content__list-item::before {
@@ -316,11 +312,11 @@ a, button:focus {
 .footer {
   margin-top: 10%;
   padding: 2.5%;
-  border-top: 1px solid #312a4e;
+  border-top: 1px solid currentColor;
 }
 
 .footer__copyright {
   text-align: center;
-  color: var(--text-color);
+  color: var(--text-color, #312a4e);
   font-size: 18px;
 }
